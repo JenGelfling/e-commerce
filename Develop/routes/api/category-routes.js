@@ -38,7 +38,7 @@ router.post('/', async (req, res) => {
   // create a new category
   try {
     const newCategory = await Category.create(req.body);
-    res.status(201).json(newCategory);
+    res.status(200).json(newCategory);
   } catch (err) {
     res.status(400).json(err);
   }
@@ -70,7 +70,7 @@ router.delete('/:id', async (req, res) => {
     });
 
     if (deleted) {
-      res.status(204).end();
+      res.status(200).end();
     } else {
       res.status(404).json({ message: 'Category not found' });
     }
