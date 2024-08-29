@@ -70,7 +70,7 @@ router.delete('/:id', async (req, res) => {
     });
 
     if (deleted) {
-      res.status(200).end();
+      res.json({ message: 'Tag deleted successfully!' });
     } else {
       res.status(404).json({ message: 'Category not found' });
     }
